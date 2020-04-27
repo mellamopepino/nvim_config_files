@@ -15,16 +15,11 @@ call plug#end()
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
 
-if has("vms")
-  set nobackup		" do not keep a backup file, use versions instead
-else
-  set backup
-  set noswapfile
-  set dir=~/tmp
-  set backupdir=~/.backup/,~/tmp//
-  set directory=~/.swp/,~/tmp//
-  set undodir=~/.undo/,~/tmp//
-endif
+set nobackup
+set nowritebackup
+set noswapfile
+set undofile
+set undodir=~/.config/nvim/undo
 
 set history=50		" keep 50 lines of command line history
 set ruler		" show the cursor position all the time
