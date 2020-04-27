@@ -82,13 +82,6 @@ if has('langmap') && exists('+langnoremap')
   set langnoremap
 endif
 
-
-" Add optional packages.
-"
-" The matchit plugin makes the % command work better, but it is not backwards
-" compatible.
-" packadd matchit
-
 set title
 
 " Show line number
@@ -102,3 +95,16 @@ set softtabstop=2
 set shiftround
 set expandtab 
 set smartindent
+
+" allow unsaved buffers to be hidden
+set hidden
+
+" show whitespace
+set list
+set listchars=nbsp:.,trail:.,tab:>\
+
+" text wrapping
+set textwidth=80
+set linebreak
+set wrap
+
