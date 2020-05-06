@@ -104,6 +104,10 @@ set smartindent
 " allow unsaved buffers to be hidden
 set hidden
 
+" you are tearing me apart, Lisa!
+set splitbelow
+set splitright
+
 " show whitespace
 set list
 set listchars=nbsp:.,trail:.,tab:>-,space:.
