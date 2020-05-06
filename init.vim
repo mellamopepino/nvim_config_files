@@ -94,11 +94,11 @@ set number
 set relativenumber
 
 " Indentation
-set tabstop=2
-set shiftwidth=2
-set softtabstop=2
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
 set shiftround
-set expandtab 
+set expandtab
 set smartindent
 
 " allow unsaved buffers to be hidden
@@ -106,10 +106,9 @@ set hidden
 
 " show whitespace
 set list
-set listchars=nbsp:.,trail:.,tab:>\
+set listchars=nbsp:.,trail:.,tab:>-,space:.
 
 " text wrapping
 set textwidth=80
-set linebreak
 set wrap
 
