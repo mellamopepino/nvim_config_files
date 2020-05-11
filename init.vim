@@ -116,3 +116,10 @@ set listchars=nbsp:.,trail:.,tab:>-,space:.
 set textwidth=80
 set wrap
 
+let mapleader = " "
+
+nnoremap <leader>- o<Esc>0i- [ ] 
+nnoremap <leader>_ o<Esc>0i<tab>- [ ] 
+nnoremap <leader>c 0f[lrx
+nnoremap <leader>u 0f[lr<space>
+nnoremap <leader>p 0f[lr-
