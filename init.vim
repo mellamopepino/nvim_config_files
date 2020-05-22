@@ -18,16 +18,17 @@ call plug#end()
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
 
+" backups
 set nobackup
 set nowritebackup
 set noswapfile
 set undofile
 set undodir=~/.config/nvim/undo
 
-set history=50		" keep 50 lines of command line history
-set ruler		" show the cursor position all the time
-set showcmd		" display incomplete commands
-set incsearch		" do incremental searching
+set history=50    " keep 50 lines of command line history
+set ruler         " show the cursor position all the time
+set showcmd       " display incomplete commands
+set incsearch     " do incremental searching
 
 " Don't use Ex mode, use Q for formatting
 map Q gq
@@ -35,13 +36,6 @@ map Q gq
 " CTRL-U in insert mode deletes a lot.  Use CTRL-G u to first break undo,
 " so that you can undo CTRL-U after inserting a line break.
 inoremap <C-U> <C-G>u<C-U>
-
-" Switch syntax highlighting on, when the terminal has colors
-" Also switch on highlighting the last used search pattern.
-if &t_Co > 2 || has("gui_running")
-  syntax on
-  set hlsearch
-endif
 
 " Only do this part when compiled with support for autocommands.
 if has("autocmd")
@@ -69,11 +63,7 @@ if has("autocmd")
 
   augroup END
 
-else
-
-  set autoindent		" always set autoindenting on
-
-endif " has("autocmd")
+endif
 
 " Convenient command to see the difference between the current buffer and the
 " file it was loaded from, thus the changes you made.
@@ -97,12 +87,16 @@ set number
 set relativenumber
 
 " Indentation
-set tabstop=4
-set shiftwidth=4
-set softtabstop=4
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
 set shiftround
 set expandtab
 set smartindent
+
+" search
+set ignorecase
+set smartcase
 
 " allow unsaved buffers to be hidden
 set hidden
@@ -116,11 +110,12 @@ set list
 set listchars=nbsp:.,trail:.,tab:>-,space:.
 
 " text wrapping
-set textwidth=80
+set textwidth=100
 set wrap
 
 let mapleader = " "
 
+" todo list mapping
 nnoremap <leader>- o<Esc>0i- [ ] 
 nnoremap <leader>_ o<Esc>0i<tab>- [ ] 
 nnoremap <leader>c 0f[lrx
