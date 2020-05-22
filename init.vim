@@ -10,6 +10,9 @@ endif
 
 call plug#begin('~/.config/nvim/plugged_minimal')
 Plug 'jiangmiao/auto-pairs'
+Plug 'tek/vim-fieldtrip'
+Plug 'AndrewRadev/sideways.vim'
+Plug 'kana/vim-submode'
 call plug#end()
 
 " allow backspacing over everything in insert mode
@@ -123,3 +126,5 @@ nnoremap <leader>_ o<Esc>0i<tab>- [ ]
 nnoremap <leader>c 0f[lrx
 nnoremap <leader>u 0f[lr<space>
 nnoremap <leader>p 0f[lr-
+
+let g:fieldtrip_start_map = "<leader>f"
