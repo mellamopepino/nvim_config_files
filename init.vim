@@ -13,6 +13,7 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'tek/vim-fieldtrip'
 Plug 'AndrewRadev/sideways.vim'
 Plug 'kana/vim-submode'
+Plug 'junegunn/vim-easy-align'
 call plug#end()
 
 " allow backspacing over everything in insert mode
@@ -123,3 +124,8 @@ nnoremap <leader>u 0f[lr<space>
 nnoremap <leader>p 0f[lr-
 
 let g:fieldtrip_start_map = "<leader>f"
+
+" EasyAlign mapping
+xmap ga <Plug>(EasyAlign)
+nmap ga <Plug>(EasyAlign)
+
