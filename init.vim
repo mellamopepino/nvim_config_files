@@ -14,6 +14,7 @@ Plug 'tek/vim-fieldtrip'
 Plug 'AndrewRadev/sideways.vim'
 Plug 'kana/vim-submode'
 Plug 'junegunn/vim-easy-align'
+Plug 'jeetsukumaran/vim-indentwise'
 call plug#end()
 
 " allow backspacing over everything in insert mode
@@ -26,45 +27,15 @@ set noswapfile
 set undofile
 set undodir=~/.config/nvim/undo
 
-set history=50    " keep 50 lines of command line history
-set ruler         " show the cursor position all the time
-set showcmd       " display incomplete commands
-set incsearch     " do incremental searching
+filetype plugin indent on
 
-" Don't use Ex mode, use Q for formatting
-map Q gq
-
-" CTRL-U in insert mode deletes a lot.  Use CTRL-G u to first break undo,
-" so that you can undo CTRL-U after inserting a line break.
-inoremap <C-U> <C-G>u<C-U>
-
-" Only do this part when compiled with support for autocommands.
-if has("autocmd")
-
-  " Enable file type detection.
-  " Use the default filetype settings, so that mail gets 'tw' set to 72,
-  " 'cindent' is on in C files, etc.
-  " Also load indent files, to automatically do language-dependent indenting.
-  filetype plugin indent on
-
-  " Put these in an autocmd group, so that we can delete them easily.
-  augroup vimrcEx
-  au!
-
-  " For all text files set 'textwidth' to 78 characters.
-  autocmd FileType text setlocal textwidth=78
-
-  " When editing a file, always jump to the last known cursor position.
-  " Don't do it when the position is invalid or when inside an event handler
-  " (happens when dropping a file on gvim).
-  autocmd BufReadPost *
-    \ if line("'\"") >= 1 && line("'\"") <= line("$") |
-    \   exe "normal! g`\"" |
-    \ endif
-
-  augroup END
-
-endif
+" When editing a file, always jump to the last known cursor position.
+" Don't do it when the position is invalid or when inside an event handler
+" (happens when dropping a file on gvim).
+autocmd BufReadPost *
+  \ if line("'\"") >= 1 && line("'\"") <= line("$") |
+  \   exe "normal! g`\"" |
+  \ endif
 
 " Convenient command to see the difference between the current buffer and the
 " file it was loaded from, thus the changes you made.
@@ -72,13 +43,6 @@ endif
 if !exists(":DiffOrig")
   command DiffOrig vert new | set bt=nofile | r ++edit # | 0d_ | diffthis
 		  \ | wincmd p | diffthis
-endif
-
-if has('langmap') && exists('+langnoremap')
-  " Prevent that the langmap option applies to characters that result from a
-  " mapping.  If unset (default), this may break plugins (but it's backward
-  " compatible).
-  set langnoremap
 endif
 
 set title
@@ -98,6 +62,13 @@ set smartindent
 " search
 set ignorecase
 set smartcase
+set history=50    " keep 50 lines of command line history
+set showcmd       " display incomplete commands
+set incsearch     " do incremental searching
+set wildmenu
+set hlsearch
+
+set ruler         " show the cursor position all the time
 
 " allow unsaved buffers to be hidden
 set hidden
@@ -114,6 +85,9 @@ set listchars=nbsp:.,trail:.,tab:>-,space:.
 set textwidth=100
 set wrap
 
+" folder
+set foldmethod=indent
+
 let mapleader = " "
 
 " todo list mapping
@@ -129,3 +103,5 @@ let g:fieldtrip_start_map = "<leader>f"
 xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
 
+" Shut up Karen!
+silent! so .vimlocal
