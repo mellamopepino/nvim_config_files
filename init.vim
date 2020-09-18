@@ -15,6 +15,9 @@ Plug 'AndrewRadev/sideways.vim'
 Plug 'kana/vim-submode'
 Plug 'junegunn/vim-easy-align'
 Plug 'jeetsukumaran/vim-indentwise'
+Plug 'twitvim/twitvim'
+Plug 'dense-analysis/ale'
+Plug 'tpope/vim-commentary'
 call plug#end()
 
 " allow backspacing over everything in insert mode
