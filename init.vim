@@ -67,7 +67,7 @@ set smartindent
 " search
 set ignorecase
 set smartcase
-set history=50    " keep 50 lines of command line history
+set history=25    " keep 50 lines of command line history
 set showcmd       " display incomplete commands
 set incsearch     " do incremental searching
 set wildmenu
