@@ -110,3 +110,6 @@ nmap ga <Plug>(EasyAlign)
 
 " Shut up Karen!
 silent! so .vimlocal
+
+" ALE
+let g:ale_fix_on_save = 1
