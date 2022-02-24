@@ -18,6 +18,8 @@ Plug 'jeetsukumaran/vim-indentwise'
 Plug 'twitvim/twitvim'
 Plug 'dense-analysis/ale'
 Plug 'tpope/vim-commentary'
+Plug 'leafgarland/typescript-vim'
+Plug 'vim-airline/vim-airline'
 call plug#end()
 
 " allow backspacing over everything in insert mode
