@@ -15,11 +15,11 @@ Plug 'AndrewRadev/sideways.vim'
 Plug 'kana/vim-submode'
 Plug 'junegunn/vim-easy-align'
 Plug 'jeetsukumaran/vim-indentwise'
-Plug 'twitvim/twitvim'
 Plug 'dense-analysis/ale'
 Plug 'tpope/vim-commentary'
 Plug 'leafgarland/typescript-vim'
 Plug 'vim-airline/vim-airline'
+Plug 'zivyangll/git-blame.vim'
 call plug#end()
 
 " allow backspacing over everything in insert mode
