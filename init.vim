@@ -20,6 +20,9 @@ Plug 'tpope/vim-commentary'
 Plug 'leafgarland/typescript-vim'
 Plug 'vim-airline/vim-airline'
 Plug 'zivyangll/git-blame.vim'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'm-demare/hlargs.nvim'
+Plug 'github/copilot.vim'
 call plug#end()
 
 " allow backspacing over everything in insert mode
@@ -93,6 +96,10 @@ set wrap
 " folder
 set foldmethod=indent
 
+" colors
+colorscheme vim
+set notermguicolors
+
 let mapleader = " "
 
 " todo list mapping
@@ -119,3 +126,4 @@ let g:ale_fixers = {
 let g:ale_fix_on_save = 1
 
 nnoremap <Leader>s :<C-u>call gitblame#echo()<CR>
+
