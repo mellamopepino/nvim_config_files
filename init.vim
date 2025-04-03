@@ -22,7 +22,6 @@ Plug 'vim-airline/vim-airline'
 Plug 'zivyangll/git-blame.vim'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'm-demare/hlargs.nvim'
-Plug 'github/copilot.vim'
 call plug#end()
 
 " allow backspacing over everything in insert mode
