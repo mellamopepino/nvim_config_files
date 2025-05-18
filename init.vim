@@ -110,6 +110,12 @@ nnoremap <leader>p 0f[lr-
 
 let g:fieldtrip_start_map = "<leader>f"
 
+" expand
+map ,e :e <C-R>=expand("%:h") . "/" <CR>
+map ,t :tabe <C-R>=expand("%:h") . "/" <CR>
+map ,s :split <C-R>=expand("%:h") . "/" <CR>
+map ,v :vsplit <C-R>=expand("%:h") . "/" <CR>
+
 " EasyAlign mapping
 xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
