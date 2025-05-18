@@ -1,0 +1,34 @@
+*spell-ale-cheatsheet.txt* Plugin cheatsheet       Vim
+
+CHEATSHEET: SPELL + ALE + LANGUAGETOOL
+===============================================================================
+
+CONTENIDO:
+1. Corrección ortográfica con Vim.
+2. Corrección gramatical con ALE + LanguageTool
+
+-------------------------------------------------------------------------------
+1. Corrección ortográfica con Vim *spell-vim*
+
+Atajos:
+<Leader>sn Siguiente error
+<Leader>sp Anterior error
+<Leader>sf Sugerencias de correcciones
+<Leader>sg Marcar como correcta
+<Leader>sw Marcar como incorrecta
+<Leader>su Deshacer corrección
+
+-------------------------------------------------------------------------------
+1. Corrección gramatical con ALE + LanguageTool *ale-languagetool*
+
+Atajos:
+<Leader>an Siguiente error
+<Leader>ap Anterior error
+<Leader>ad Detalle del error
+<Leader>at Toggle ALE
+<Leader>af Ejecutar fixer
+<Leader>as Sugerencias de fixer
+<Leader>al Ejecutar linter
+
+===============================================================================
+vim:tw=78:ft=help:norl:

@@ -124,11 +124,44 @@ nmap ga <Plug>(EasyAlign)
 silent! so .vimlocal
 
 " ALE
+let g:ale_linters = {
+ \ 'javascript': ['eslint'],
+ \ 'astro': ['eslint'],
+ \ 'markdown': ['languagetool'],
+ \ 'text': ['languagetool'],
+ \ }
+
 let g:ale_fixers = {
- \ 'javascript': ['eslint']
+ \ 'javascript': ['prettier'],
+ \ 'astro': ['prettier'],
  \ }
 
 let g:ale_fix_on_save = 1
+let g:ale_languagetool_language = 'es,en-US'
+let g:ale_echo_cursor = 0
+let g:ale_hover_cursor = 1
+let g:ale_virtualtext_cursor = 1
 
-nnoremap <Leader>s :<C-u>call gitblame#echo()<CR>
+nnoremap <Leader>an :AlENext<CR>
+nnoremap <Leader>ap :ALEPrevious<CR>
+nnoremap <Leader>ad :ALEDetail<CR>
+nnoremap <Leader>at :ALEToggle<CR>
+nnoremap <Leader>af :ALEFix<CR>
+nnoremap <Leader>as :ALEFixSuggest<CR>
+nnoremap <Leader>al :ALELint<CR>
 
+" Habilitar spell checking en español
+set spell
+set spelllang=es,en
+set spellsuggest=best,9
+set spelloptions=camel
+syntax spell toplevel
+
+nnoremap <Leader>sn ]s
+nnoremap <Leader>sp [s
+nnoremap <Leader>sf z=
+nnoremap <Leader>sg zg
+nnoremap <Leader>sw zw
+nnoremap <Leader>su zu
+
+nnoremap <Leader>b :<C-u>call gitblame#echo()<CR>

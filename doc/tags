@@ -1,0 +1,3 @@
+ale-languagetool	spell-ale.txt	/*ale-languagetool*
+spell-ale-cheatsheet.txt	spell-ale.txt	/*spell-ale-cheatsheet.txt*
+spell-vim	spell-ale.txt	/*spell-vim*
