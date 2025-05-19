@@ -138,9 +138,10 @@ let g:ale_fixers = {
 
 let g:ale_fix_on_save = 1
 let g:ale_languagetool_language = 'es,en-US'
-let g:ale_echo_cursor = 0
+let g:ale_echo_cursor = 1
 let g:ale_hover_cursor = 1
-let g:ale_virtualtext_cursor = 1
+let g:ale_set_hover = 1
+let g:ale_virtualtext_cursor = 0
 
 nnoremap <Leader>an :AlENext<CR>
 nnoremap <Leader>ap :ALEPrevious<CR>
