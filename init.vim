@@ -24,6 +24,17 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'm-demare/hlargs.nvim'
 call plug#end()
 
+set updatetime=1000
+
+lua << EOF
+vim.api.nvim_create_autocmd("CursorHold", {
+  pattern = "*",
+  callback = function()
+    vim.diagnostic.open_float(nil, { focus = false })
+  end,
+})
+EOF
+
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
 
