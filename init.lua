@@ -50,6 +50,7 @@ Plug('nvim-treesitter/nvim-treesitter', { ['do'] = ':TSUpdate' })
 Plug('m-demare/hlargs.nvim')
 Plug('uga-rosa/ccc.nvim')
 Plug('RRethy/base16-nvim')
+Plug('neovim/nvim-lspconfig')
 
 vim.call('plug#end')
 
@@ -129,6 +130,22 @@ vim.api.nvim_create_autocmd("CursorHold", {
     })
   end,
 })
+
+-- LSP
+local lspconfig = require('lspconfig')
+
+lspconfig.ts_ls.setup {
+  root_dir = lspconfig.util.root_pattern("tsconfig.json", "package.json", ".git"),
+  on_attach = function(_, bufnr)
+    local opts = { noremap=true, silent=true, buffer=bufnr }
+    vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
+    vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
+    vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
+    vim.keymap.set('n', 'K',  vim.lsp.buf.hover, opts)
+  end,
+}
+
+vim.o.winborder = 'single'
 
 -- Key map
 vim.g.mapleader = " "
