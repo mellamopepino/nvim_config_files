@@ -213,3 +213,7 @@ vim.keymap.set("n", "<leader>cr", function()
   vim.cmd("CccHighlighterToggle")
 end, { desc = "Refresh CCC highlight" })
 
+-- Navigation map
+vim.keymap.set("n", "<leader>re", ":e %:h", { desc = "Open relative path" })
+vim.keymap.set("n", "<leader>rv", ":vs %:h", { desc = "Open relative path with vsplit" })
+vim.keymap.set("n", "<leader>rs", ":split %:h", { desc = "Open relative path with split" })
