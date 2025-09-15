@@ -163,6 +163,7 @@ vim.api.nvim_set_keymap('n', 'ga', '<Plug>(EasyAlign)', {})
 -- ALE config
 vim.g.ale_linters = {
   javascript = { 'eslint' },
+  typescript = { 'eslint' },
   astro = { 'eslint' },
   markdown = { 'languagetool' },
   text = { 'languagetool' },
@@ -171,6 +172,7 @@ vim.g.ale_linters = {
 
 vim.g.ale_fixers = {
   javascript = { 'prettier' },
+  typescript = { 'prettier' },
   astro = { 'prettier' },
   json = { 'jq' },
 }
